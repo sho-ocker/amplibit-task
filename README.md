@@ -1,7 +1,3 @@
-Here's the revised README.md file with additional details about the Docker Compose setup and the LDAP initialization files:
-
----
-
 # **Spring Boot LDAP-Inventory Project**
 
 This project is a Spring Boot-based application that integrates with **OpenLDAP** to simulate Active Directory (AD). It provides user authentication, periodic user synchronization, and a role-based access control (RBAC) system. Additionally, it manages an **Inventory** system via RESTful APIs with OpenAPI documentation.
