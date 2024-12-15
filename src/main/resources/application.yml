@@ -1,0 +1,38 @@
+spring:
+  config:
+    import: optional:file:.env[.properties]
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+  liquibase:
+    change-log: classpath:db/changelog/master.xml
+
+ldap:
+  url: ${LDAP_URL}
+  base: ${LDAP_BASE}
+  userDn: ${LDAP_USER_DN}
+  password: ${LDAP_PASSWORD}
+
+security:
+  jwt:
+    secret-key: ${JWT_KEY}
+    expiration-time: 1000000
+
+logging:
+  level:
+    org:
+      springframework:
+        security: DEBUG
+        ldap: DEBUG
+
+openapi:
+  info:
+    title: Amplibit Task API
+    version: 1.0
+    description: API documentation for Amplibit task
+
+springdoc:
+  swagger-ui:
+    path: /openapi

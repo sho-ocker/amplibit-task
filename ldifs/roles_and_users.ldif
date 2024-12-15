@@ -1,0 +1,76 @@
+dn: dc=task,dc=com
+objectClass: top
+objectClass: dcObject
+objectClass: organization
+o: My Organization
+
+dn: ou=Roles,dc=task,dc=com
+objectClass: organizationalUnit
+ou: Roles
+
+dn: ou=Users,dc=task,dc=com
+objectClass: organizationalUnit
+ou: Users
+
+dn: cn=ADMIN,ou=Roles,dc=task,dc=com
+cn: ADMIN
+description: Admin role
+objectClass: groupOfNames
+member: cn=admin_person,dc=task,dc=com
+member: cn=admin_person_2,dc=task,dc=com
+
+dn: cn=USER,ou=Roles,dc=task,dc=com
+cn: USER
+description: Regular user role
+objectClass: groupOfNames
+member: cn=user_person,dc=task,dc=com
+member: cn=user_person_2,dc=task,dc=com
+
+dn: cn=VIEWER,ou=Roles,dc=task,dc=com
+cn: VIEWER
+description: Viewer role
+objectClass: groupOfNames
+member: cn=viewer_person,dc=task,dc=com
+member: cn=viewer_person_2,dc=task,dc=com
+
+dn: cn=admin_person,ou=Users,dc=task,dc=com
+cn: admin_person
+sn: admin_sn
+userPassword: pass
+description: Test user with admin role
+objectClass: inetOrgPerson
+
+dn: cn=user_person,ou=Users,dc=task,dc=com
+cn: user_person
+sn: user_sn
+userPassword: pass
+description: Test user with user role
+objectClass: inetOrgPerson
+
+dn: cn=viewer_person,ou=Users,dc=task,dc=com
+cn: viewer_person
+sn: viewer_sn
+userPassword: pass
+description: Test user with viewer role
+objectClass: inetOrgPerson
+
+dn: cn=admin_person_2,ou=Users,dc=task,dc=com
+cn: admin_person_2
+sn: admin_sn
+userPassword: pass
+description: Test user with admin role
+objectClass: inetOrgPerson
+
+dn: cn=user_person_2,ou=Users,dc=task,dc=com
+cn: user_person_2
+sn: user_sn
+userPassword: pass
+description: Test user with viewer role
+objectClass: inetOrgPerson
+
+dn: cn=viewer_person_2,ou=Users,dc=task,dc=com
+cn: viewer_person_2
+sn: viewer_sn
+userPassword: pass
+description: Test user with viewer role
+objectClass: inetOrgPerson

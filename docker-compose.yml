@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  openldap:
+    image: bitnami/openldap:latest
+    ports:
+      - "1389:1389"
+    environment:
+      - LDAP_ROOT=dc=task,dc=com
+      - LDAP_ADMIN_USERNAME=admin
+      - LDAP_ADMIN_PASSWORD=pass
+      - BITNAMI_DEBUG=true
+      - LDAP_CUSTOM_LDIF_DIR=/ldifs
+    volumes:
+      - './ldifs:/ldifs'
+
+  postgres:
+    image: bitnami/postgresql:latest
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=amplibit
+    volumes:
+      - 'postgres-data:/bitnami/postgresql'
+
+volumes:
+  ldifs:
+    driver: local
+  postgres-data:
+    driver: local
